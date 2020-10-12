@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private val viewModel by viewModel<MainViewModel>()
+    private val viewModel by viewModel <MainViewModel>()
     private lateinit var mainAdapter: MainAdapter
 
 
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun subscribeSongs() {
         viewModel.getSongs().observe(this, Observer {
-            mainAdapter.update(it)
+           mainAdapter.update(it)
         })
     }
 
@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         recycler_main.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = mainAdapter
+            recycler_main.adapter = adapter
         }
     }
 }
