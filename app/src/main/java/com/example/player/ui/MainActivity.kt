@@ -10,30 +10,30 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private val viewModel by viewModel <MainViewModel>()
+    private val viewModel by viewModel<MainViewModel>()
+
     private lateinit var mainAdapter: MainAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        recycler()
+        recyclerr()
         subscribeSongs()
 
     }
 
-    private fun subscribeSongs() {
-        viewModel.getSongs().observe(this, Observer {
-           mainAdapter.update(it)
-        })
-    }
-
-    private fun recycler() {
+    private fun recyclerr() {
         mainAdapter = MainAdapter()
         recycler_main.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = mainAdapter
-            recycler_main.adapter = adapter
         }
+    }
+
+    private fun subscribeSongs() {
+        viewModel.cover.observe(this, Observer {
+           mainAdapter.update(it)
+        })
     }
 }

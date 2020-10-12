@@ -14,8 +14,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.PlayerVH>() {
     private val list = mutableListOf<PlayerModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayerVH {
-        return PlayerVH(
-            LayoutInflater.from(parent.context)
+        return PlayerVH(LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_list, parent, false)
         )
     }
