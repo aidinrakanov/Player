@@ -1,4 +1,4 @@
-package com.example.player.ui
+package com.example.player.ui.main
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
