@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         recycler()
         subscribeSongs()
-        setUpListeners()
+        startPlayer()
 
     }
 
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun setUpListeners() {
+    private fun startPlayer() {
         mainAdapter.setOnClick(object : MainAdapter.ClickListener {
             override fun click(item: PlayerModel) {
                 PlayerActivity.instanceStart(this@MainActivity, item)
