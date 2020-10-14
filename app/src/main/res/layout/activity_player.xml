@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="20dp"
     tools:context=".ui.player.PlayerActivity">
-    
+
     <de.hdodenhof.circleimageview.CircleImageView
 
         android:id="@+id/image_player"
