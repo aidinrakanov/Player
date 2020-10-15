@@ -9,6 +9,7 @@ import android.os.Handler
 import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.player.R
+import com.example.player.extension.loadImage
 import com.example.player.model.PlayerModel
 import kotlinx.android.synthetic.main.activity_player.*
 
@@ -23,6 +24,7 @@ class PlayerActivity : AppCompatActivity() {
         setUpListeners()
         seekbarChange()
         initial()
+        getNames()
 
     }
 
@@ -40,6 +42,12 @@ class PlayerActivity : AppCompatActivity() {
 
             }
         },0)
+    }
+
+    private fun getNames(){
+        song_name_player.text = item?.song
+        artist_name_player.text = item?.artists
+        image_player.loadImage(item?.coverImage, R.drawable.song_image )
     }
 
 
